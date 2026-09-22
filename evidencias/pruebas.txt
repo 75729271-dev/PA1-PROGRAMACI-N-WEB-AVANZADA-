@@ -1,0 +1,32 @@
+
+> campus-solicitudes-pa1@1.0.0 test
+> playwright test
+
+
+Running 18 tests using 1 worker
+
+  ok  1 tests\solicitudes.spec.ts:48:1 › 01 · Inicio, resumen y seis registros ficticios (681ms)
+  ok  2 tests\solicitudes.spec.ts:68:1 › 02 · Búsqueda sin acentos, filtro combinado y estado vacío (424ms)
+  ok  3 tests\solicitudes.spec.ts:81:1 › 03 · Formulario vacío bloquea el registro y muestra errores (479ms)
+  ok  4 tests\solicitudes.spec.ts:98:1 › 04 · Rechaza espacios, correo inválido, código incorrecto y mínimos (458ms)
+  ok  5 tests\solicitudes.spec.ts:115:1 › 05 · Registro válido, detalle, resumen y persistencia tras recarga (628ms)
+  ok  6 tests\solicitudes.spec.ts:150:1 › 06 · Navegación a detalle, atrás y rutas inexistentes (489ms)
+  ok  7 tests\solicitudes.spec.ts:173:1 › 07 · Cancelar no guarda información (447ms)
+  ok  8 tests\solicitudes.spec.ts:183:1 › 08 · Almacenamiento corrupto muestra aviso sin romper la aplicación (342ms)
+  ok  9 tests\solicitudes.spec.ts:199:1 › 09 · Almacenamiento bloqueado no confirma un registro inexistente (515ms)
+  ok 10 tests\solicitudes.spec.ts:218:1 › 10 · HTTP simulado: respuesta válida y filtro del directorio (375ms)
+  ok 11 tests\solicitudes.spec.ts:235:1 › 11 · HTTP simulado: error 503 y reintento exitoso (535ms)
+  ok 12 tests\solicitudes.spec.ts:260:1 › 12 · HTTP simulado: formato inesperado y respuesta vacía (475ms)
+  ok 13 tests\solicitudes.spec.ts:276:1 › 13 · HTTP simulado: estado de carga y cancelación al navegar (482ms)
+  ok 14 tests\solicitudes.spec.ts:302:1 › 14 · API REAL: GET desde HttpClient, datos y evidencia HTTP (669ms)
+  ok 15 tests\solicitudes.spec.ts:342:1 › 15 · Vista móvil: navegación, formulario y sin desbordamiento de página (503ms)
+  ok 16 tests\solicitudes.spec.ts:376:1 › 16 · Respuesta de red fallida permite reintentar (347ms)
+  ok 17 tests\solicitudes.spec.ts:385:1 › 17 · Contenido de usuario se muestra como texto, sin ejecutar HTML (448ms)
+  ok 18 tests\solicitudes.spec.ts:398:1 › 18 · Un listado guardado vacío se conserva sin reinsertar ejemplos (358ms)
+
+  18 passed (9.7s)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

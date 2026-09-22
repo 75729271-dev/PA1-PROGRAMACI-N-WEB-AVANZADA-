@@ -1,0 +1,3 @@
+
+> campus-solicitudes-pa1@1.0.0 typecheck
+> tsc --noEmit -p tsconfig.app.json

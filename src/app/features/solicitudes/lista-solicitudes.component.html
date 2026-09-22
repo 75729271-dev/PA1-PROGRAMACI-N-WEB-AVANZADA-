@@ -1,0 +1,165 @@
+<section *ngIf="vista$ | async as vista">
+  <div class="page-heading">
+    <div>
+      <p class="eyebrow">GESTIÓN ACADÉMICA</p>
+      <h1>Solicitudes</h1>
+      <p class="lead">Tus trámites, organizados de principio a fin.</p>
+    </div>
+    <a class="button primary" routerLink="/solicitudes/nueva"
+      ><span aria-hidden="true">＋</span> Nueva solicitud</a
+    >
+  </div>
+  <div class="notice warning" *ngIf="servicio.aviso" role="alert">
+    {{ servicio.aviso }}
+  </div>
+  <div class="stats-grid" aria-label="Resumen de solicitudes">
+    <div class="stat">
+      <span>Total de solicitudes</span
+      ><strong>{{ vista.resumen.total | number: "2.0" }}</strong
+      ><small>Registros en este navegador</small>
+    </div>
+    <div class="stat">
+      <span><i class="status-dot pending-dot"></i>Pendientes</span
+      ><strong>{{ vista.resumen.pendientes | number: "2.0" }}</strong
+      ><small>Por iniciar la atención</small>
+    </div>
+    <div class="stat">
+      <span><i class="status-dot review-dot"></i>En revisión</span
+      ><strong>{{ vista.resumen.enRevision | number: "2.0" }}</strong
+      ><small>En evaluación académica</small>
+    </div>
+    <div class="stat">
+      <span><i class="status-dot resolved-dot"></i>Resueltas</span
+      ><strong>{{ vista.resumen.resueltas | number: "2.0" }}</strong
+      ><small>Proceso finalizado</small>
+    </div>
+  </div>
+  <div class="panel list-panel">
+    <div class="panel-title">
+      <div>
+        <h2>
+          Registro de solicitudes
+          <span class="count">{{ vista.resumen.total }}</span>
+        </h2>
+        <p>Consulta el detalle y el estado de cada trámite.</p>
+      </div>
+      <span class="small muted">Más recientes primero</span>
+    </div>
+    <div class="filters">
+      <div class="search-field">
+        <span aria-hidden="true">⌕</span
+        ><label class="sr-only" for="buscar">Buscar solicitudes</label
+        ><input
+          id="buscar"
+          type="search"
+          [(ngModel)]="busqueda"
+          placeholder="Buscar por asunto, estudiante o código…"
+        />
+      </div>
+      <div>
+        <label class="sr-only" for="estado">Filtrar por estado</label
+        ><select id="estado" [(ngModel)]="estado">
+          <option value="">Todos los estados</option>
+          <option *ngFor="let item of estados" [value]="item">
+            {{ item }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <ng-container *ngIf="filtrar(vista.solicitudes) as filtradas">
+      <div class="table-wrap" *ngIf="filtradas.length; else vacio">
+        <table>
+          <caption class="sr-only">
+            Solicitudes académicas registradas
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">SOLICITUD</th>
+              <th scope="col">ESTUDIANTE</th>
+              <th scope="col">FECHA</th>
+              <th scope="col">ESTADO</th>
+              <th scope="col"><span class="sr-only">Acciones</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let solicitud of filtradas; trackBy: trackId">
+              <td class="subject-cell">
+                <a [routerLink]="['/solicitudes', solicitud.id]">{{
+                  solicitud.asunto
+                }}</a
+                ><span class="subtext"
+                  >{{ solicitud.tipo }} <span aria-hidden="true">·</span>
+                  {{ solicitud.id | slice: 0 : 11 }}</span
+                >
+              </td>
+              <td>
+                <span>{{ solicitud.estudiante.nombre }}</span
+                ><span class="subtext">{{ solicitud.estudiante.codigo }}</span>
+              </td>
+              <td class="date-cell">
+                {{ solicitud.creadaEn | date: "dd MMM yyyy" : "-0500" }}
+              </td>
+              <td>
+                <app-status-badge
+                  [estado]="solicitud.estado"
+                ></app-status-badge>
+              </td>
+              <td>
+                <a
+                  class="row-link"
+                  [routerLink]="['/solicitudes', solicitud.id]"
+                  [attr.aria-label]="'Ver solicitud: ' + solicitud.asunto"
+                  >↗</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ng-template #vacio
+        ><div class="empty-state">
+          <span class="empty-icon" aria-hidden="true">▤</span>
+          <h3>
+            {{
+              vista.solicitudes.length
+                ? "No encontramos coincidencias"
+                : "Tu primera solicitud empieza aquí"
+            }}
+          </h3>
+          <p>
+            {{
+              vista.solicitudes.length
+                ? "Prueba con otro término o cambia el estado seleccionado."
+                : "Registra un trámite para verlo en este espacio."
+            }}
+          </p>
+          <button
+            *ngIf="vista.solicitudes.length"
+            class="button secondary"
+            (click)="limpiar()"
+          >
+            Limpiar filtros</button
+          ><a
+            *ngIf="!vista.solicitudes.length"
+            class="button primary"
+            routerLink="/solicitudes/nueva"
+            >Crear solicitud</a
+          >
+        </div></ng-template
+      >
+      <div class="table-footer" aria-live="polite">
+        {{ filtradas.length }} de {{ vista.solicitudes.length }} solicitudes
+        <span>Hora de Perú (UTC−5)</span>
+      </div>
+    </ng-container>
+  </div>
+  <div class="bottom-note">
+    <span class="note-mark" aria-hidden="true">i</span>
+    <p>
+      <strong>Un espacio para practicar.</strong> Los registros iniciales son
+      ficticios. Las nuevas solicitudes se guardan en este navegador y comienzan
+      en estado pendiente.
+    </p>
+    <a routerLink="/ayuda">Conocer el alcance ↗</a>
+  </div>
+</section>

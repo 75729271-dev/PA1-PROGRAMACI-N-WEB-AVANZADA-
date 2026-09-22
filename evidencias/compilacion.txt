@@ -1,0 +1,24 @@
+
+> campus-solicitudes-pa1@1.0.0 build
+> ng build --configuration production
+
+- Generating browser application bundles (phase: setup)...
+√ Browser application bundle generation complete.
+√ Browser application bundle generation complete.
+- Copying assets...
+√ Copying assets complete.
+- Generating index html...
+√ Index html generation complete.
+
+Initial Chunk Files           | Names                                   |  Raw Size | Estimated Transfer Size
+main.dc409746776756ea.js      | main                                    | 325.61 kB |                86.82 kB
+polyfills.7253d1cbc470e5f9.js | polyfills                               |  33.02 kB |                10.65 kB
+styles.90a0e44a660052ee.css   | styles                                  |  16.15 kB |                 3.82 kB
+runtime.0076600cab8328bc.js   | runtime                                 |   2.62 kB |                 1.23 kB
+
+| Initial Total                           | 377.39 kB |               102.53 kB
+
+Lazy Chunk Files              | Names                                   |  Raw Size | Estimated Transfer Size
+103.f9ee2b2d80991c6b.js       | features-solicitudes-solicitudes-module |  23.92 kB |                 6.73 kB
+
+Build at: 2026-09-22T01:46:34.297Z - Hash: a7e5e85bb7403460 - Time: 2077ms

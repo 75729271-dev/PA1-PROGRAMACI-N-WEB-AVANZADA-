@@ -1,0 +1,41 @@
+{
+  "name": "campus-solicitudes-pa1",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Plataforma de Gestión de Solicitudes Académicas · PA1 · Angular 16",
+  "scripts": {
+    "start": "ng serve --host 127.0.0.1",
+    "build": "ng build --configuration production",
+    "typecheck": "tsc --noEmit -p tsconfig.app.json",
+    "test": "playwright test",
+    "test:ui": "playwright test --headed",
+    "verify": "npm run typecheck && npm run build && npm test",
+    "format": "prettier --write \"src/**/*.{ts,html,css}\" \"*.{json,ts}\" \"tests/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.{ts,html,css}\" \"*.{json,ts}\" \"tests/*.ts\""
+  },
+  "engines": {
+    "node": ">=18.10.0 <19",
+    "npm": ">=9 <11"
+  },
+  "dependencies": {
+    "@angular/animations": "16.2.12",
+    "@angular/common": "16.2.12",
+    "@angular/compiler": "16.2.12",
+    "@angular/core": "16.2.12",
+    "@angular/forms": "16.2.12",
+    "@angular/platform-browser": "16.2.12",
+    "@angular/platform-browser-dynamic": "16.2.12",
+    "@angular/router": "16.2.12",
+    "rxjs": "7.8.1",
+    "tslib": "2.6.2",
+    "zone.js": "0.13.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "16.2.16",
+    "@angular/cli": "16.2.16",
+    "@angular/compiler-cli": "16.2.12",
+    "@playwright/test": "1.56.1",
+    "prettier": "3.3.3",
+    "typescript": "5.1.6"
+  }
+}

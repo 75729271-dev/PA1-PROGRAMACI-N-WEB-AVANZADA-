@@ -1,0 +1,72 @@
+<a class="back-link" routerLink="/solicitudes">← Volver a solicitudes</a>
+<ng-container *ngIf="vista$ | async as vista"
+  ><ng-container *ngIf="vista.solicitud as solicitud; else noExiste">
+    <div class="notice success" role="status" *ngIf="recienCreada">
+      <strong>Solicitud registrada correctamente.</strong> El registro se guardó
+      en este navegador.
+    </div>
+    <div class="page-heading">
+      <div>
+        <p class="eyebrow">DETALLE DEL TRÁMITE</p>
+        <h1>Tu solicitud</h1>
+        <p class="lead">Toda la información del registro en un solo lugar.</p>
+      </div>
+      <app-status-badge [estado]="solicitud.estado"></app-status-badge>
+    </div>
+    <div class="detail-grid">
+      <article class="panel detail-panel">
+        <p class="eyebrow">{{ solicitud.tipo }}</p>
+        <h2 class="detail-title">{{ solicitud.asunto }}</h2>
+        <dl class="metadata">
+          <div>
+            <dt>Código de solicitud</dt>
+            <dd class="request-id">{{ solicitud.id }}</dd>
+          </div>
+          <div>
+            <dt>Fecha de registro</dt>
+            <dd>
+              {{ solicitud.creadaEn | date: "dd MMMM yyyy, HH:mm" : "-0500" }}
+              (Perú)
+            </dd>
+          </div>
+        </dl>
+        <hr />
+        <h3>Descripción</h3>
+        <p class="description-text">{{ solicitud.descripcion }}</p>
+      </article>
+      <aside class="panel detail-panel">
+        <h2>Estudiante</h2>
+        <div class="student-heading">
+          <span class="avatar light">{{
+            solicitud.estudiante.nombre | slice: 0 : 1
+          }}</span
+          ><strong>{{ solicitud.estudiante.nombre }}</strong>
+        </div>
+        <dl class="stacked-metadata">
+          <div>
+            <dt>Código</dt>
+            <dd>{{ solicitud.estudiante.codigo }}</dd>
+          </div>
+          <div>
+            <dt>Correo</dt>
+            <dd>{{ solicitud.estudiante.correo }}</dd>
+          </div>
+        </dl>
+        <div class="notice neutral">
+          El estado es informativo. Esta etapa de la práctica no incluye
+          atención administrativa.
+        </div>
+      </aside>
+    </div>
+  </ng-container></ng-container
+>
+<ng-template #noExiste
+  ><div class="panel empty-state">
+    <h1>Solicitud no encontrada</h1>
+    <p>
+      El código no existe en este navegador. Revisa el enlace o vuelve al
+      listado.
+    </p>
+    <a class="button primary" routerLink="/solicitudes">Ver solicitudes</a>
+  </div></ng-template
+>

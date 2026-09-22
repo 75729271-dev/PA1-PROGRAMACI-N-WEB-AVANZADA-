@@ -1,0 +1,60 @@
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a routerLink="/solicitudes" class="brand" aria-label="Campus, inicio">
+      <img src="assets/favicon.svg" alt="" width="40" height="40" /><span
+        >campus<span class="brand-caption">GESTIÓN ACADÉMICA</span></span
+      >
+    </a>
+    <div class="workspace-label">ESPACIO ACADÉMICO</div>
+    <nav aria-label="Navegación principal">
+      <a
+        routerLink="/solicitudes"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+        ><span aria-hidden="true">▤</span> Solicitudes</a
+      >
+      <a
+        routerLink="/solicitudes/nueva"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        ><span aria-hidden="true">＋</span> Nueva solicitud</a
+      >
+      <a
+        routerLink="/directorio"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        ><span aria-hidden="true">◎</span> Directorio</a
+      >
+    </nav>
+    <div class="sidebar-note">
+      <span class="eyebrow">TU TRÁMITE, EN UN LUGAR</span>
+      <p>
+        Registra una solicitud y consulta su información cuando lo necesites.
+      </p>
+      <a routerLink="/ayuda"
+        >Cómo funciona <span aria-hidden="true">↗</span></a
+      >
+    </div>
+    <div class="sidebar-footer">
+      <span class="avatar">PA</span>
+      <div>Proyecto académico<small>Programación Web II · PA1</small></div>
+    </div>
+  </aside>
+  <div class="main-shell">
+    <header class="topbar">
+      <span
+        >Portal de solicitudes <span class="muted">/</span>
+        <strong>Espacio de trabajo</strong></span
+      ><span class="demo-tag"
+        ><span aria-hidden="true">●</span> Entorno de demostración</span
+      >
+    </header>
+    <main id="contenido" tabindex="-1"><router-outlet></router-outlet></main>
+    <footer class="page-footer">
+      <span>Campus · Solicitudes académicas</span
+      ><span>Datos ficticios · Guardado en este navegador</span>
+    </footer>
+  </div>
+</div>

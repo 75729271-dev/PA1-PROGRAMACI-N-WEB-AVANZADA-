@@ -1,0 +1,8 @@
+Entorno real de verificación
+Node.js: v18.20.8
+npm: 10.8.2
+Angular: 16.2.12
+Angular CLI: 16.2.16
+TypeScript: 5.1.6
+Playwright: 1.56.1
+Plataforma: win32 x64

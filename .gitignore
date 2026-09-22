@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.angular/
+.tools/
+tmp/
+test-results/
+playwright-report/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db

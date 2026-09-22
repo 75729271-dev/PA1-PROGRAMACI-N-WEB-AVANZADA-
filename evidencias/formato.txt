@@ -1,0 +1,6 @@
+
+> campus-solicitudes-pa1@1.0.0 format:check
+> prettier --check "src/**/*.{ts,html,css}" "*.{json,ts}" "tests/*.ts"
+
+Checking formatting...
+All matched files use Prettier code style!

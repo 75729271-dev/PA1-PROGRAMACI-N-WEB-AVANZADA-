@@ -1,0 +1,108 @@
+<div class="page-heading">
+  <div>
+    <p class="eyebrow">FUENTE EXTERNA</p>
+    <h1>Directorio</h1>
+    <p class="lead">
+      Explora los contactos de demostración de JSONPlaceholder.
+    </p>
+  </div>
+  <button class="button secondary" (click)="cargar()" [disabled]="cargando">
+    {{ cargando ? "Consultando…" : "Actualizar directorio" }}
+    <span aria-hidden="true">↻</span>
+  </button>
+</div>
+<div class="notice neutral api-intro">
+  <span class="note-mark" aria-hidden="true">i</span>
+  <p>
+    Este directorio consulta una API pública en tiempo real. Sus usuarios son
+    ficticios y no representan estudiantes ni personal de una institución.
+  </p>
+</div>
+<div class="panel api-source">
+  <div>
+    <span class="eyebrow">ORIGEN DE LOS DATOS</span>
+    <p>
+      <span class="method">GET</span
+      ><a [href]="servicio.endpoint" target="_blank" rel="noopener noreferrer"
+        >{{ servicio.endpoint }} ↗</a
+      >
+    </p>
+  </div>
+  <span *ngIf="consulta" class="badge resolved">HTTP {{ consulta.status }}</span
+  ><span *ngIf="cargando" class="badge review">Consultando</span
+  ><span *ngIf="error" class="badge pending">Sin conexión disponible</span>
+</div>
+<div class="panel empty-state" *ngIf="cargando" role="status">
+  <span class="spinner" aria-hidden="true"></span>
+  <h2>Cargando directorio</h2>
+  <p>Estamos consultando la fuente de datos.</p>
+</div>
+<div class="panel empty-state" *ngIf="error" role="alert">
+  <span class="empty-icon" aria-hidden="true">!</span>
+  <h2>No pudimos cargar el directorio</h2>
+  <p>{{ error }}</p>
+  <button class="button primary" (click)="cargar()">Reintentar</button>
+</div>
+<ng-container *ngIf="consulta && !cargando"
+  ><div class="directory-toolbar">
+    <div>
+      <h2>
+        Contactos <span class="count">{{ consulta.usuarios.length }}</span>
+      </h2>
+      <span class="small muted"
+        >Última consulta:
+        {{ consulta.consultadoEn | date: "HH:mm:ss" : "-0500" }} · hora de
+        Perú</span
+      >
+    </div>
+    <div class="search-field">
+      <span aria-hidden="true">⌕</span
+      ><label class="sr-only" for="buscar-contacto">Buscar contactos</label
+      ><input
+        id="buscar-contacto"
+        type="search"
+        [(ngModel)]="busqueda"
+        placeholder="Buscar un contacto…"
+      />
+    </div>
+  </div>
+  <div class="contact-grid">
+    <article
+      class="panel contact-card"
+      *ngFor="let usuario of usuariosFiltrados; trackBy: trackId"
+    >
+      <div class="contact-top">
+        <span class="avatar light">{{ usuario.name | slice: 0 : 1 }}</span
+        ><span class="small muted">#{{ usuario.id | number: "2.0" }}</span>
+      </div>
+      <h3>{{ usuario.name }}</h3>
+      <span class="small muted">&#64;{{ usuario.username }}</span>
+      <dl>
+        <div>
+          <dt>Correo</dt>
+          <dd>{{ usuario.email }}</dd>
+        </div>
+        <div>
+          <dt>Organización ficticia</dt>
+          <dd>{{ usuario.company.name }}</dd>
+        </div>
+      </dl>
+    </article>
+  </div>
+  <div class="panel empty-state" *ngIf="!usuariosFiltrados.length">
+    <h2>
+      {{
+        consulta.usuarios.length
+          ? "No encontramos contactos"
+          : "El directorio está vacío"
+      }}
+    </h2>
+    <p>
+      {{
+        consulta.usuarios.length
+          ? "Prueba con otro nombre, correo u organización."
+          : "La API respondió correctamente, pero no contiene registros."
+      }}
+    </p>
+  </div>
+</ng-container>
