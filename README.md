@@ -2,97 +2,128 @@
 
 **Curso:** Programación Web II · Código 30690<br>
 **Evaluación:** PA1 · Sesiones 1 a 4 · Periodo 202620<br>
-**Sección:** 3677.202620<br>
+**Sección:** 4060.202620<br>
 **Docente:** ESPINOZA BRAVO, WILDER JULIO<br>
 **Estudiante:** Angel Fernando Reyes Moreno<br>
+**Modalidad de presentación:** individual<br>
 **Repositorio:** [PA1-PROGRAMACI-N-WEB-AVANZADA-](https://github.com/75729271-dev/PA1-PROGRAMACI-N-WEB-AVANZADA-)
 
-## 1. Integrante
+Profesor, presento **Campus**, una aplicación para registrar y consultar solicitudes académicas. En este documento explico el problema abordado, la solución técnica, su relación con las sesiones de clase y las evidencias que puede utilizar para revisar el funcionamiento.
 
-| Nombre completo | Responsabilidad | Participación |
-|---|---|---|
-| Angel Fernando Reyes Moreno | Presentación individual y revisión de la entrega | Selección de recursos visuales, revisión de la interfaz y entrega del video. Ver [registro de participación](docs/PARTICIPACION.md). |
+**Video de exposición:** [Ver mi exposición en YouTube](https://www.youtube.com/watch?v=TKgLy1HdxAg)
+
+## 1. Integrante y participación
+
+Presento este trabajo de manera individual por motivos personales. Mi nombre es **Angel Fernando Reyes Moreno** y asumo la presentación y sustentación del proyecto.
+
+| Aspecto | Participación y referencia |
+|---|---|
+| Presentación del caso | Presento la solución de solicitudes académicas y su relación con los contenidos de la PA1. |
+| Revisión visual | Seleccioné las imágenes y solicité ajustes en la marca Campus y en los textos de la interfaz. |
+| Documentación y entrega | Proporcioné los datos de la entrega y revisé la forma de presentar el proyecto al docente. |
+| Exposición | Adjunto el [video de sustentación](https://www.youtube.com/watch?v=TKgLy1HdxAg) y los materiales de apoyo. |
+
+El [registro de participación](docs/PARTICIPACION.md) distingue los aportes de preparación del seguimiento de las sesiones 1 a 4. Las evidencias individuales de clase no están adjuntas a este repositorio; las capturas y pruebas que presento aquí corresponden al funcionamiento de la aplicación.
 
 ## 2. Descripción y objetivo
 
-**Problema.** Las solicitudes académicas necesitan datos consistentes, una forma clara de registro y vistas organizadas para consultarlas. Concentrar las reglas, el acceso a datos y la presentación en un solo componente dificulta mantener la aplicación.
+El caso plantea la necesidad de organizar solicitudes de constancias de estudios, certificados de notas, cambios de horario y reservas de matrícula. Para consultar estos trámites es necesario contar con datos consistentes del estudiante y una descripción clara de lo solicitado.
 
-**Objetivo.** Construir un frontend en Angular 16 con TypeScript estricto que permita registrar solicitudes válidas, navegar a su detalle, consultarlas por búsqueda y estado, y visualizar datos de una API REST mediante `HttpClient`.
+Mi objetivo con esta entrega es demostrar cómo **TypeScript y Angular 16** permiten representar esos datos, validar su ingreso, organizar las pantallas y consultar información externa mediante una API REST.
 
-**Solución.** Campus ofrece un listado con indicadores, un formulario reactivo, una vista de detalle, un directorio remoto y una guía de uso. Los registros académicos se guardan en `localStorage`; el directorio consulta usuarios ficticios de JSONPlaceholder. Ambas fuentes se identifican por separado.
+La solución incluye un listado con búsqueda y filtros, un formulario reactivo, una vista de detalle, un directorio externo y una guía de uso. El registro de solicitudes y la consulta del directorio utilizan fuentes independientes: las solicitudes se guardan en el navegador y los contactos se obtienen de JSONPlaceholder.
 
-![Vista de solicitudes](evidencias/capturas/01-solicitudes.png)
+![Vista de solicitudes de Campus](evidencias/capturas/01-solicitudes.png)
 
-Las imágenes proporcionadas se integran en el encabezado, el formulario y los estados vacíos. [Uso de los recursos visuales](docs/RECURSOS-VISUALES.md).
+### Alcance de la aplicación
 
-### Alcance
+Al iniciar la aplicación por primera vez, encontrará seis solicitudes ficticias con distintos estados. Puede registrar una nueva solicitud, consultar su detalle, buscarla y comprobar que permanece después de recargar la página. Cada registro nuevo comienza en **Pendiente**.
 
-- Registro, consulta, búsqueda, filtros y persistencia local de solicitudes.
-- Seis solicitudes ficticias iniciales para mostrar diferentes estados. Los nuevos registros comienzan en **Pendiente**.
-- Directorio REST real, independiente del registro académico. Fuente usada en la sesión 4, diapositiva 30.
-- Sin autenticación, envío de correos, atención administrativa, base de datos central ni backend Node.js. El caso de PA1 no exige esas implementaciones.
-- Las reglas del código `A` + 8 dígitos y las longitudes del formulario son decisiones de este caso de demostración, no políticas oficiales de ISIL.
+Los datos se conservan en `localStorage`, dentro del mismo navegador y origen. Otro navegador mantiene su propia lista y borrar los datos del sitio elimina los registros locales. Los estados iniciales son ejemplos; la aplicación no realiza atención administrativa ni envía solicitudes o correos a una institución.
+
+El directorio utiliza `https://jsonplaceholder.typicode.com/users`, fuente incluida en la sesión 4, diapositiva 30. Sus usuarios son ficticios y no están vinculados con las solicitudes registradas. El alcance de esta PA1 no incluye un backend Node.js, autenticación ni una base de datos central.
 
 ## 3. Desarrollo y solución de las cuatro actividades
 
-| Actividad | Implementación concreta | Código principal | Evidencia |
-|---|---|---|---|
-| 1. Base tipada y modular | Interfaces `Estudiante`, `NuevaSolicitud`, `Solicitud`, `UsuarioApi`; uniones para tipos y estados; ES6+; módulos ES; compilación estricta | [Modelos](src/app/core/models/solicitud.model.ts), [utilidades](src/app/core/utils/solicitud.utils.ts), [configuración TS](tsconfig.json) | [Comprobación de tipos](evidencias/tipado.txt) y [compilación](evidencias/compilacion.txt) |
-| 2. Arquitectura Angular | `AppModule`, módulo de solicitudes con carga diferida, `SharedModule`, componentes separados, servicio compartido e inyección por constructor | [Módulo de solicitudes](src/app/features/solicitudes/solicitudes.module.ts), [servicio](src/app/core/services/solicitudes.service.ts) | Listado, contadores, búsqueda, detalle y pruebas 01, 02, 05, 06 |
-| 3. Formulario y rutas | Formulario reactivo tipado, validadores, errores por campo, `RouterModule.forRoot` y `forChild`, ruta de detalle y 404 | [Formulario](src/app/features/solicitudes/nueva-solicitud.component.ts), [rutas](src/app/app-routing.module.ts) | Capturas de [datos inválidos](evidencias/capturas/02-validaciones.png) y [registro válido](evidencias/capturas/03-registro-exitoso.png) |
-| 4. API REST | `HttpClient` dentro de un servicio inyectable, validación de respuesta, carga, error, reintento y vista de usuarios | [Servicio HTTP](src/app/core/services/directorio.service.ts), [vista del directorio](src/app/features/directorio/directorio.component.ts) | [Captura real](evidencias/capturas/04-api-real.png) y [registro HTTP real](evidencias/consumo-api-real.json) |
+### Actividad 1 · TypeScript y módulos
 
-### Procedimiento seguido
+La estructura comienza con las interfaces `Estudiante`, `NuevaSolicitud` y `Solicitud`. Esta separación distingue los datos ingresados por el usuario de los que se agregan al guardar, como el identificador, el estado y la fecha. Los tipos y estados de solicitud utilizan uniones para limitar los valores admitidos en el código.
 
-1. Leer la consigna, identificar los cuatro productos técnicos y contrastarlos con las sesiones y la rúbrica.
-2. Fijar Angular 16.2.12, CLI 16.2.16 y TypeScript 5.1.6. Configurar el proyecto y su compilación.
-3. Definir modelos, reglas y ejemplos ficticios antes de conectar las vistas.
-4. Separar el almacenamiento de solicitudes y la consulta HTTP en servicios independientes.
-5. Implementar listado, resumen, filtros, formulario, detalle y navegación.
-6. Agregar validación real del JSON remoto, estados de carga, errores, reintento y control del almacenamiento local.
-7. Compilar, ejecutar las pruebas en navegador, revisar las capturas y documentar resultados y límites.
+La configuración estricta de TypeScript permite detectar incompatibilidades antes de ejecutar. En las utilidades se aplican `const`, `let`, funciones flecha, desestructuración y spread. Los archivos comparten sus funciones y tipos mediante módulos ES con `import` y `export`.
 
-### Relación con lo visto en clase
+Puede revisar los [modelos](src/app/core/models/solicitud.model.ts), las [utilidades](src/app/core/utils/solicitud.utils.ts) y la [configuración TypeScript](tsconfig.json).
 
-| Sesión | Aplicación en este proyecto |
+### Actividad 2 · Componentes, módulos y servicios de Angular
+
+La aplicación separa el listado, el formulario, el detalle y el directorio en componentes. `AppModule` organiza la aplicación y el módulo de solicitudes se carga al acceder a sus rutas. Los elementos compartidos, como la etiqueta de estado, se reúnen en `SharedModule`.
+
+`SolicitudesService` centraliza el acceso a los registros. Los componentes reciben el servicio mediante inyección de dependencias y comparten los cambios sin duplicar la lógica de almacenamiento. Las plantillas utilizan interpolación, enlaces de propiedades, eventos, `*ngIf`, `*ngFor` y `[(ngModel)]` para los filtros.
+
+Puede comprobar esta organización en el [módulo de solicitudes](src/app/features/solicitudes/solicitudes.module.ts) y el [servicio de solicitudes](src/app/core/services/solicitudes.service.ts).
+
+### Actividad 3 · Formulario reactivo y navegación
+
+El formulario está definido con `FormBuilder` y controles tipados. Las reglas verifican campos obligatorios, correo, código del estudiante y longitudes mínimas y máximas. El código debe comenzar con `A` y continuar con ocho dígitos. El asunto requiere al menos cinco caracteres útiles y la descripción, veinte; ingresar únicamente espacios no satisface la validación. Estas reglas corresponden al caso de demostración.
+
+Si los datos son inválidos, aparecen mensajes junto a los campos y el registro se detiene. Si son válidos, el servicio guarda la solicitud y el Router abre su detalle. El almacenamiento se realiza antes de comunicar el cambio a la vista: si falla, se informa el error y se conserva el contenido del formulario.
+
+`RouterModule.forRoot` define la navegación principal y `forChild` organiza las rutas del módulo. La ruta `nueva` se declara antes de `:id` para evitar que se interprete como un identificador.
+
+La implementación está en el [componente del formulario](src/app/features/solicitudes/nueva-solicitud.component.ts), sus [validadores](src/app/features/solicitudes/solicitud.validators.ts) y las [rutas principales](src/app/app-routing.module.ts).
+
+### Actividad 4 · Consumo de una API REST
+
+En **Directorio** puede comprobar una petición GET real a JSONPlaceholder. `DirectorioService` utiliza `HttpClient`, obtiene la respuesta como `unknown` y valida su estructura antes de mostrarla. Esta comprobación es necesaria porque una interfaz TypeScript no valida por sí sola el JSON recibido durante la ejecución.
+
+El componente utiliza `async/await` con `firstValueFrom` para esperar la respuesta del Observable. La pantalla distingue carga, resultado y error, permite reintentar y establece un tiempo máximo de espera de doce segundos.
+
+Puede revisar el [servicio HTTP](src/app/core/services/directorio.service.ts), el [componente del directorio](src/app/features/directorio/directorio.component.ts) y la [evidencia de consumo real](evidencias/consumo-api-real.json).
+
+### Procedimiento y decisiones
+
+El desarrollo partió del modelo de datos y de las reglas de las solicitudes. Sobre esa base se organizaron los servicios, los componentes y la navegación. Después se conectaron el formulario y el directorio, se incorporaron los estados de error y se verificó el recorrido completo mediante pruebas de navegador.
+
+Se mantiene **Angular 16.2.12**, con CLI 16.2.16 y TypeScript 5.1.6, de acuerdo con el caso de la PA1. Los módulos ES organizan el código TypeScript y los `NgModule` agrupan los elementos de Angular. El proyecto utiliza el builder `@angular-devkit/build-angular:browser`, que gestiona Webpack desde Angular CLI. Las opciones `strict`, `strictTemplates` y los source maps apoyan la revisión y depuración.
+
+La [documentación de arquitectura](docs/ARQUITECTURA.md) amplía estas decisiones. Las imágenes se incorporan como apoyo visual al encabezado, al formulario y a los estados vacíos; su uso se describe en [recursos visuales](docs/RECURSOS-VISUALES.md).
+
+### Relación con las sesiones de clase
+
+| Sesión | Aplicación en Campus |
 |---|---|
-| 1 | `const`, `let`, funciones flecha, destructuración, spread, template literals, interfaces, uniones e importación/exportación. `async/await` en `DirectorioComponent.cargar()`. |
-| 2 | Componentes y servicios tipados; `strict`, `sourceMap` y `strictTemplates`; empaquetado Webpack gestionado por Angular CLI. Se utiliza Angular como exige el caso; la mención de React en el temario no obliga a construir otra aplicación. |
-| 3 | `NgModule`, componentes, interpolación, `[disabled]`, `[estado]`, `(click)`, `(ngSubmit)`, `[(ngModel)]` en filtros, `*ngIf`, `*ngFor`, `[ngClass]`, `@Input` y servicios con DI. |
-| 4 | `ReactiveFormsModule`, `FormBuilder`, `Validators`, validador personalizado, `RouterModule`, `HttpClientModule`, servicio REST y explicación de una futura integración con backend. |
+| 1 | ES6+, interfaces, uniones, tipado estático, módulos ES y `async/await` en la consulta del directorio. |
+| 2 | Componentes y servicios tipados, TSConfig, compilación con Angular CLI y Webpack, source maps y separación de responsabilidades. |
+| 3 | Angular 16, `NgModule`, componentes, data binding, directivas y servicios con inyección de dependencias. |
+| 4 | Formularios reactivos, validaciones, RouterModule, HttpClient y explicación de una futura integración con backend. |
 
-**Decisiones importantes.** Los módulos ES organizan los archivos TypeScript; los `NgModule` organizan Angular. No se agregan namespaces globales redundantes. El builder `@angular-devkit/build-angular:browser` administra Webpack, por lo que no se duplica su configuración con un `webpack.config.js` manual. [Arquitectura y justificación completa](docs/ARQUITECTURA.md).
+## 4. Instrucciones de ejecución para la revisión
 
-## 4. Cómo ejecutar o revisar
+Para reproducir el proyecto se requiere **Node.js 18.20.8**, npm **10.x**, Git y un navegador. La instalación de dependencias y la consulta del directorio requieren conexión a Internet. Las versiones se conservan para reproducir el entorno académico de Angular 16; `.nvmrc` registra la versión de Node.
 
-### Requisitos
-
-- Node.js **18.20.8** y npm **10.x** para reproducir este proyecto académico Angular 16.
-- Git y un navegador moderno.
-- Internet para instalar dependencias y consultar el directorio.
-
-Angular 16.2 requiere Node `^16.14.0` o `^18.10.0` y TypeScript `>=4.9.3 <5.2.0`, según la [tabla oficial](https://angular.dev/reference/versions). Se fija Node 18 en `.nvmrc`. Estas versiones históricas se conservan por el requisito académico; no son una recomendación para un sistema nuevo de producción. No actualizar Angular automáticamente durante la revisión.
+Desde una terminal puede ejecutar:
 
 ```bash
 git clone https://github.com/75729271-dev/PA1-PROGRAMACI-N-WEB-AVANZADA-.git
 cd PA1-PROGRAMACI-N-WEB-AVANZADA-
-node --version
-npm --version
 npm ci
 npm start
 ```
 
-Abrir **http://127.0.0.1:4200**. En Windows, si PowerShell bloquea `npm.ps1`, usar `npm.cmd` en los mismos comandos.
+La aplicación estará disponible en **http://127.0.0.1:4200**. En Windows, si PowerShell bloquea `npm.ps1`, puede utilizar `npm.cmd` en los mismos comandos.
 
-**En la computadora donde se preparó este trabajo:** existe un entorno Node 18 local en `.tools/`, excluido de Git. Para iniciarlo sin cambiar Node del sistema:
+### Recorrido sugerido
 
-```powershell
-powershell -ExecutionPolicy Bypass -File scripts/iniciar-local.ps1
-```
+1. En `/solicitudes`, con los datos iniciales, encontrará seis ejemplos y sus contadores. La búsqueda `lucia` permite comprobar la coincidencia sin acentos; también puede filtrar por estado.
+2. En `/solicitudes/nueva`, al pulsar **Registrar solicitud** sin completar los campos aparecen los errores de validación y no se guarda ningún registro.
+3. Para probar un registro válido puede usar `Andrea Ejemplo`, `A20261234`, `andrea@example.com`, el tipo **Constancia de estudios**, un asunto de al menos cinco caracteres y una descripción de al menos veinte.
+4. Al guardar verá el detalle, el identificador y el estado pendiente. Si regresa al listado y recarga la página, la solicitud se conserva.
+5. En `/directorio` puede comprobar los contactos y la respuesta HTTP. En DevTools → Network, la petición `users` muestra la URL, el método GET y el JSON recibido.
+6. Para revisar el manejo de errores puede activar Offline en Network y actualizar el directorio. Al recuperar la conexión, **Reintentar** vuelve a consultar la API.
+7. Una ruta o un identificador inexistente muestran los mensajes correspondientes.
 
-Ese script utiliza las herramientas ya instaladas. En otro equipo seguir `npm ci` y `npm start` con Node 18.
+Si necesita restablecer los ejemplos, puede eliminar únicamente la clave `campus.solicitudes.v1` desde DevTools → Application → Local Storage y recargar. Esa operación elimina las solicitudes locales de Campus.
 
-### Compilación y pruebas
+### Comprobación técnica
 
 ```bash
 npm run typecheck
@@ -101,108 +132,62 @@ npx playwright install chromium
 npm test
 ```
 
-La compilación genera `dist/campus/`. `npm test` inicia el servidor si no existe uno, ejecuta pruebas y guarda resultados/capturas. La prueba marcada **API REAL** necesita que JSONPlaceholder sea accesible. El resto utiliza respuestas HTTP controladas para comprobar errores de forma repetible:
+El build genera `dist/campus/`. Las pruebas utilizan sesiones aisladas del navegador y no modifican los registros de su sesión personal. La prueba **API REAL** consulta el servicio externo; las demás controlan las respuestas HTTP para comprobar de forma repetible situaciones como errores de red o datos inesperados.
+
+Para ejecutar los grupos por separado o consultar el informe:
 
 ```bash
-# Solo pruebas independientes de la disponibilidad externa
 npm test -- --grep-invert "API REAL"
-
-# Solo la evidencia de consumo real
 npm test -- --grep "API REAL"
-
-# Informe visual de la última ejecución
 npx playwright show-report
 ```
 
-El flujo de GitHub Actions ejecuta compilación y pruebas deterministas. No presenta respuestas simuladas como evidencia de consumo real.
+GitHub Actions ejecuta la instalación, el tipado, la compilación y las pruebas independientes de la disponibilidad de la API externa.
 
-### Recorrido de revisión
+## 5. Resultados y evidencias
 
-1. Abrir `/solicitudes`: comprobar seis ejemplos y los contadores. Buscar `lucia` y filtrar por estado.
-2. Abrir `/solicitudes/nueva`, pulsar **Registrar solicitud** sin datos: aparecen seis errores y no se registra nada.
-3. Probar correo `correo@`, código `123`, asunto corto o descripción con espacios: el formulario impide el registro.
-4. Completar con `Andrea Ejemplo`, `A20261234`, `andrea@example.com`, un tipo, asunto de al menos 5 caracteres y descripción de al menos 20.
-5. Registrar: comprobar confirmación, código único y estado pendiente. Regresar al listado y recargar: debe conservarse el nuevo registro.
-6. Abrir `/directorio`: comprobar contactos, origen HTTP y respuesta **HTTP 200**. En DevTools → Network filtrar `users` y mostrar la respuesta JSON.
-7. Para demostrar error real de conexión, cambiar Network a Offline y pulsar **Actualizar directorio**. Volver a Online y pulsar **Reintentar**.
-8. Abrir una URL inexistente y un código de solicitud inexistente: se muestran mensajes adecuados.
+La ejecución documentada registra **18 pruebas de navegador aprobadas**, comprobación de tipos sin errores y compilación de producción correcta. La consulta real al directorio respondió **HTTP 200** con **10 usuarios**. Las fechas y los resultados detallados están disponibles en los archivos de evidencia.
 
-**Restablecer la demo:** desde DevTools → Application → Local Storage eliminar solamente `campus.solicitudes.v1` y recargar. Esto borra los registros locales del portal. No borrar otros datos del navegador. Las pruebas usan contextos aislados y no modifican las solicitudes de tu sesión personal.
-
-## 5. Evidencias
-
-Las capturas proceden de la aplicación en ejecución con datos ficticios. Los resultados se encuentran en [evidencias](evidencias/README.md).
-
-| Archivo | Qué demuestra |
+| Evidencia | Qué puede comprobar |
 |---|---|
-| [01 · Solicitudes](evidencias/capturas/01-solicitudes.png) | Componentes, indicadores, directivas y listado |
-| [02 · Validaciones](evidencias/capturas/02-validaciones.png) | Formulario inválido y mensajes por campo |
-| [03 · Registro correcto](evidencias/capturas/03-registro-exitoso.png) | Registro válido, persistencia y navegación al detalle |
-| [04 · API real](evidencias/capturas/04-api-real.png) | Usuarios obtenidos mediante una petición real |
-| [05 · Error HTTP simulado](evidencias/capturas/05-error-api-simulado.png) | Estado de error 503 inducido exclusivamente por la prueba |
-| [06 · Móvil](evidencias/capturas/06-movil.png) | Diseño adaptable y navegación en pantalla pequeña |
-| [Evidencia HTTP](evidencias/consumo-api-real.json) | URL, método, estado, fecha y cantidad de usuarios de la consulta real |
-| [Tipado](evidencias/tipado.txt), [build](evidencias/compilacion.txt), [pruebas](evidencias/pruebas.txt) | Resultados verificables de las herramientas |
+| [Listado de solicitudes](evidencias/capturas/01-solicitudes.png) | Componentes, indicadores, directivas y registros iniciales. |
+| [Formulario inválido](evidencias/capturas/02-validaciones.png) | Mensajes por campo y bloqueo del registro incompleto. |
+| [Registro correcto](evidencias/capturas/03-registro-exitoso.png) | Confirmación y navegación al detalle de una solicitud válida. |
+| [Consumo real de API](evidencias/capturas/04-api-real.png) | Contactos obtenidos mediante una petición real. |
+| [Error HTTP simulado](evidencias/capturas/05-error-api-simulado.png) | Respuesta de la interfaz ante un HTTP 503 inducido por la prueba. |
+| [Vista móvil](evidencias/capturas/06-movil.png) | Adaptación de la interfaz a una pantalla pequeña. |
+| [Registro HTTP](evidencias/consumo-api-real.json) | URL, método, estado, fecha y cantidad de usuarios recibidos. |
+| [Tipado](evidencias/tipado.txt), [compilación](evidencias/compilacion.txt) y [pruebas](evidencias/pruebas.txt) | Resultados de las comprobaciones ejecutadas. |
+| [Informe detallado](evidencias/resultados-pruebas.json) | Resultado individual de los escenarios de navegador. |
 
-## 6. Matriz de participación
+La [carpeta de evidencias](evidencias/README.md) describe cada escenario. Las respuestas simuladas se identifican expresamente y se distinguen de la consulta real a JSONPlaceholder.
 
-| Integrante | Desarrollo | Pruebas | Documentación | Exposición | Evidencia individual |
-|---|---|---|---|---|---|
-| Angel Fernando Reyes Moreno | Selección de imágenes y solicitud de ajustes de marca y textos | Resultados automáticos en evidencias; seguimiento de clase por documentar | Datos de entrega, revisión del contenido y enlace del video | [Video de exposición](https://www.youtube.com/watch?v=TKgLy1HdxAg) | [Registro individual](docs/PARTICIPACION.md) |
+## 6. Exposición y materiales de apoyo
 
-No se asignan niveles de participación ni asistencia sin evidencia. Completar la [bitácora individual](docs/PARTICIPACION.md) con fechas reales, avances, revisiones y retroalimentación. Los commits y las pruebas automáticas de esta preparación no sustituyen la asistencia evaluada por el docente.
+Adjunto mi exposición para acompañar la revisión del proyecto:
 
-## 7. Video de exposición
+**YouTube:** [https://www.youtube.com/watch?v=TKgLy1HdxAg](https://www.youtube.com/watch?v=TKgLy1HdxAg)
 
-**Video de exposición en YouTube:** [Ver la exposición de Campus](https://www.youtube.com/watch?v=TKgLy1HdxAg)
+También puede consultar la [presentación PowerPoint](output/exposicion/Campus-PA1-Presentacion-final.pptx), el [guion de exposición en PDF](output/pdf/Campus-Guion-Corrido-10-Minutos.pdf) y el [guion en texto](docs/GUION-CORRIDO-10-MINUTOS.md).
 
-El enlace fue proporcionado por el estudiante. La configuración de visibilidad debe permanecer en **Público** para cumplir la consigna.
+## 7. Conclusiones
 
-Material de apoyo: [presentación PowerPoint](output/exposicion/Campus-PA1-Presentacion-final.pptx), [guion corrido en PDF](output/pdf/Campus-Guion-Corrido-10-Minutos.pdf) y [guion editable](docs/GUION-CORRIDO-10-MINUTOS.md). La exposición debe incluir cámara encendida, procedimiento, decisiones, código y demostración.
+Con esta entrega presento un recorrido completo de registro y consulta que permite relacionar los contenidos de las cuatro sesiones con una aplicación funcional.
 
-## 8. Conclusiones
+El tipado estático ayuda a mantener una estructura consistente, pero debe complementarse con validaciones cuando la información llega de un formulario, del almacenamiento o de una API. La separación entre componentes y servicios permite que el listado y el formulario compartan los registros sin repetir la lógica de acceso a datos.
 
-1. Las interfaces y uniones permiten describir las entidades y restringir sus estados antes de ejecutar. La validación del JSON complementa el tipado estático cuando los datos provienen de una fuente externa.
-2. Separar componentes, módulos y servicios permite compartir el registro entre vistas sin duplicar lógica. El formulario y el listado consumen el mismo servicio inyectado.
-3. El formulario reactivo impide guardar datos incompletos y comunica qué corregir. Las rutas permiten pasar del registro al detalle y regresar al listado conservando los datos.
-4. `HttpClient` permite consumir una API sin implementar el backend de las sesiones posteriores. Los estados de carga, error y reintento hacen visible el resultado de la comunicación.
-5. La persistencia local es suficiente para demostrar el caso de PA1, pero no reemplaza una base de datos multiusuario. Una etapa posterior requeriría backend, autenticación y validación del lado del servidor.
+El formulario reactivo y las rutas conectan las reglas de ingreso con el recorrido del usuario. Por su parte, la consulta HTTP demuestra la comunicación con una fuente externa y la necesidad de contemplar carga, error y reintento.
 
-## 9. Rúbrica y pendientes de entrega
+La principal limitación del caso es la persistencia por navegador. Una evolución del proyecto requeriría un backend, autenticación y una base de datos central para compartir solicitudes y gestionar cambios de estado reales. En esta PA1, el alcance se concentra en Angular, TypeScript y el consumo de una API REST.
 
-| Criterio de la tabla oficial | Máximo | Dónde se atiende |
-|---|---:|---|
-| Tipado, ES6+ y módulos | 3 | Actividad 1 |
-| Componentes, binding, directivas y servicios | 3 | Actividad 2 |
-| Formulario reactivo y RouterModule | 2 | Actividad 3 |
-| API REST con HttpClient | 2 | Actividad 4 |
-| GitHub y README | 4 | Este repositorio y documentación |
-| Video público | 3 | Enlace incorporado en la sección 7; revisar visibilidad y contenido |
-| Asistencia, participación y seguimiento | 3 | Evidencias individuales de clase |
-| **Total** | **20** | La calificación corresponde al docente |
+## 8. Referencias
 
-**Inconsistencia detectada:** la sección E del PDF menciona 12 puntos técnicos, pero su tabla H asigna 3 + 3 + 2 + 2 = **10**, y los otros criterios suman 10. Se conserva la tabla oficial que totaliza 20 y se recomienda consultar la discrepancia al docente. No se garantiza una nota.
-
-- [x] Modalidad individual autorizada por el docente, según confirmación del estudiante.
-- [ ] Revisar el código y realizar una ejecución personal completa.
-- [ ] Registrar aportes y evidencias reales de seguimiento de sesiones 1 a 4.
-- [x] Incorporar el enlace de la exposición proporcionado por el estudiante.
-- [ ] Confirmar visibilidad Pública, cámara encendida y contenido del video.
-- [x] Colocar el enlace de YouTube dentro del README.
-- [x] Repositorio publicado y README accesible sin iniciar sesión.
-- [ ] Entregar el enlace del repositorio en el aula virtual.
-
-Ver el [checklist y los puntos delicados de la consigna](docs/ENTREGA.md).
-
-## 10. Fuentes
-
-- Material proporcionado: `PA1_30690_PROGRAMACION_WEB_II (1).pdf`, apartados E a H; plantilla de `README.md` del curso.
+- Consigna `PA1_30690_PROGRAMACION_WEB_II (1).pdf` y plantilla de README del curso.
 - Sesión 1: `30690-S01-PPT.pptx`, ES6+, tipos, interfaces y módulos.
-- Sesión 2: `30690-S02-PPT.pptx`, componentes/servicios, TSConfig, Webpack y depuración.
-- Sesión 3: `30690-S03-PPT.pptx`, módulos, componentes, binding y DI.
-- Sesión 4: `30690-S04-PPT.pptx`, formularios, rutas y HttpClient; diapositiva 30 para JSONPlaceholder.
-- [Compatibilidad de versiones Angular](https://angular.dev/reference/versions).
-- [La sintaxis de control de flujo aparece desde Angular 17](https://angular.dev/reference/migrations/control-flow). Para Angular 16 se utilizan `*ngIf` y `*ngFor`.
-- [Guía de JSONPlaceholder](https://jsonplaceholder.typicode.com/guide/).
+- Sesión 2: `30690-S02-PPT.pptx`, integración de TypeScript, TSConfig, Webpack y depuración.
+- Sesión 3: `30690-S03-PPT.pptx`, Angular, módulos, componentes, binding e inyección de dependencias.
+- Sesión 4: `30690-S04-PPT.pptx`, formularios, rutas y HttpClient; diapositiva 30 para la fuente JSONPlaceholder.
+- [Compatibilidad de versiones de Angular](https://angular.dev/reference/versions).
+- [Documentación de JSONPlaceholder](https://jsonplaceholder.typicode.com/guide/).
 
-**Última actualización:** 22/09/2026, hora de Perú. Las evidencias automáticas registran también fecha UTC.
+**Última actualización del README:** 23/09/2026, hora de Perú.

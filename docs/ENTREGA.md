@@ -18,7 +18,7 @@ El enlace ya está incluido en el README. Antes de entregar, comprobar desde una
 - [x] Capturas y resultados de ejecución incluidos.
 - [x] Presentación y guion disponibles.
 - [x] Enlace de YouTube colocado dentro del README.
-- [x] Modalidad individual autorizada por el docente, según confirmación del estudiante.
+- [ ] Resolución de la solicitud de presentación individual por motivos personales.
 - [ ] Adjuntar las evidencias reales de participación de las sesiones 1 a 4.
 - [ ] Comprobar visibilidad pública y contenido de la grabación.
 - [x] Proyecto publicado en GitHub y README comprobado sin iniciar sesión.

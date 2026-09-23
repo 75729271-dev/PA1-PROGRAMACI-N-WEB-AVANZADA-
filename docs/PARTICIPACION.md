@@ -1,9 +1,9 @@
 # Participación y seguimiento individual
 
 **Estudiante:** Angel Fernando Reyes Moreno<br>
-**Sección:** 3677.202620<br>
+**Sección:** 4060.202620<br>
 **Docente:** ESPINOZA BRAVO, WILDER JULIO<br>
-**Modalidad presentada:** individual, autorizada por el docente según confirmación del estudiante.
+**Modalidad presentada:** individual por motivos personales. Se ha planteado la revisión de esta modalidad ante el impedimento de entrega.
 
 ## Aportes registrados durante la preparación
 
