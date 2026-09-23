@@ -7,8 +7,6 @@
 **Estudiante:** Angel Fernando Reyes Moreno<br>
 **Repositorio:** [PA1-PROGRAMACI-N-WEB-AVANZADA-](https://github.com/75729271-dev/PA1-PROGRAMACI-N-WEB-AVANZADA-)
 
-> **Entrega:** aplicación Angular 16, documentación, evidencias, presentación y enlace de exposición. La modalidad individual fue autorizada por el docente, según confirmación del estudiante. Ver [participación](docs/PARTICIPACION.md).
-
 ## 1. Integrante
 
 | Nombre completo | Responsabilidad | Participación |
