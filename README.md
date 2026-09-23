@@ -191,7 +191,8 @@ Material de apoyo: [presentación PowerPoint](output/exposicion/Campus-PA1-Prese
 - [x] Incorporar el enlace de la exposición proporcionado por el estudiante.
 - [ ] Confirmar visibilidad Pública, cámara encendida y contenido del video.
 - [x] Colocar el enlace de YouTube dentro del README.
-- [ ] Verificar acceso al repositorio y entregar su enlace en el aula virtual.
+- [x] Repositorio publicado y README accesible sin iniciar sesión.
+- [ ] Entregar el enlace del repositorio en el aula virtual.
 
 Ver el [checklist y los puntos delicados de la consigna](docs/ENTREGA.md).
 

@@ -21,7 +21,7 @@ El enlace ya está incluido en el README. Antes de entregar, comprobar desde una
 - [x] Modalidad individual autorizada por el docente, según confirmación del estudiante.
 - [ ] Adjuntar las evidencias reales de participación de las sesiones 1 a 4.
 - [ ] Comprobar visibilidad pública y contenido de la grabación.
-- [ ] Verificar el proyecto publicado y accesible en GitHub.
+- [x] Proyecto publicado en GitHub y README comprobado sin iniciar sesión.
 - [ ] Enviar el enlace del repositorio por el aula virtual.
 
 ## Publicación
