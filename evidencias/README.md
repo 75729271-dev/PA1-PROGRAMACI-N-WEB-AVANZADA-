@@ -10,14 +10,14 @@ Esta carpeta registra pruebas reales de la aplicación. Los registros académico
 - Petición real a `https://jsonplaceholder.typicode.com/users`: **GET, HTTP 200, 10 usuarios**.
 - Capturas revisadas en escritorio y móvil.
 
-Consultar las fechas exactas en los archivos de resultados. La ejecución usa Node 18.20.8, npm 10.8.2, Angular 16.2.12, CLI 16.2.16, TypeScript 5.1.6 y Playwright 1.56.1 con Chromium.
+Consultar las fechas exactas en los archivos de resultados. La ejecución usa Node 18.20.8, npm 10.8.2, Angular 16.2.12, CLI 16.2.16, TypeScript 5.1.6 y Playwright 1.56.1. La comprobación final se ejecutó en Microsoft Edge (motor Chromium).
 
 ## Archivos
 
 | Evidencia | Descripción |
 |---|---|
 | [entorno.txt](entorno.txt) | Versiones del entorno de ejecución |
-| [tipado.txt](tipado.txt) | Salida de `npm run typecheck` |
+| [tipado.txt](tipado.txt) | Resultado de la comprobación TypeScript |
 | [compilacion.txt](compilacion.txt) | Build real, tamaño de salida, fecha y hash |
 | [formato.txt](formato.txt) | Verificación de formato del código |
 | [pruebas.txt](pruebas.txt) | Resultados de los 18 escenarios de navegador |
@@ -59,6 +59,16 @@ La prueba intercepta la petición y devuelve HTTP 503 para verificar el estado d
 Ancho de 390 píxeles. La tabla permite desplazamiento horizontal dentro de su contenedor; la página completa no se desborda. También se prueba el registro desde este tamaño.
 
 ![Vista móvil](capturas/06-movil.png)
+
+## Integración de imágenes
+
+Capturas adicionales revisadas después de incorporar las imágenes proporcionadas:
+
+- [Formulario ilustrado en escritorio](capturas/07-formulario-ilustrado.png).
+- [Formulario ilustrado en móvil](capturas/08-formulario-movil.png).
+- [Estado sin solicitudes](capturas/09-lista-vacia.png).
+
+Las tres imágenes cargan correctamente y las vistas comprobadas no presentan desbordamiento horizontal de la página. La compilación y las 18 pruebas se volvieron a ejecutar después de la integración.
 
 ## Escenarios comprobados
 

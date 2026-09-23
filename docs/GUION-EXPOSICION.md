@@ -1,5 +1,7 @@
 # Guion individual de exposición · Angel Fernando Reyes Moreno
 
+Para ensayar con frases completas, abre [el guion corrido de 10 minutos](GUION-CORRIDO-10-MINUTOS.md). También están disponibles [la presentación](../output/exposicion/Campus-PA1-Presentacion-final.pptx) y [el guion en PDF](../output/pdf/Campus-Guion-Corrido-10-Minutos.pdf).
+
 Duración orientativa: 10 minutos. La consigna sugiere 8 a 12 minutos. Confirmar primero la autorización para presentar individualmente. Mantener la cámara encendida durante toda la exposición y el código legible. Este guion es una guía de preparación: explicar con palabras propias y demostrar el funcionamiento.
 
 ## Preparación antes de grabar

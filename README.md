@@ -7,15 +7,13 @@
 **Estudiante:** Angel Fernando Reyes Moreno<br>
 **Repositorio:** [PA1-PROGRAMACI-N-WEB-AVANZADA-](https://github.com/75729271-dev/PA1-PROGRAMACI-N-WEB-AVANZADA-)
 
-> **Estado de entrega:** desarrollo técnico preparado. Antes de entregar falta publicar el video, registrar la participación real y confirmar con el docente la autorización para trabajar individualmente. La consigna indica equipos de 4, máximo 5. Este documento no afirma que exista una excepción aprobada.
+> **Entrega:** aplicación Angular 16, documentación, evidencias, presentación y enlace de exposición. La modalidad individual fue autorizada por el docente, según confirmación del estudiante. Ver [participación](docs/PARTICIPACION.md).
 
 ## 1. Integrante
 
-| Nombre completo | Rol propuesto | Participación por verificar |
+| Nombre completo | Responsabilidad | Participación |
 |---|---|---|
-| Angel Fernando Reyes Moreno | Responsable individual del proyecto, revisión y exposición | Completar con las modificaciones, pruebas y explicaciones que realice personalmente. Ver [matriz de participación](docs/PARTICIPACION.md). |
-
-**Transparencia:** esta versión base se desarrolló con asistencia de Codex. Los resultados automáticos acreditan la ejecución del software; no acreditan asistencia a clase, autoría individual sin asistencia ni dominio del estudiante. El estudiante debe revisar, comprender, adaptar y sustentar el proyecto de acuerdo con las reglas de su curso.
+| Angel Fernando Reyes Moreno | Presentación individual y revisión de la entrega | Selección de recursos visuales, revisión de la interfaz y entrega del video. Ver [registro de participación](docs/PARTICIPACION.md). |
 
 ## 2. Descripción y objetivo
 
@@ -26,6 +24,8 @@
 **Solución.** Campus ofrece un listado con indicadores, un formulario reactivo, una vista de detalle, un directorio remoto y una guía de uso. Los registros académicos se guardan en `localStorage`; el directorio consulta usuarios ficticios de JSONPlaceholder. Ambas fuentes se identifican por separado.
 
 ![Vista de solicitudes](evidencias/capturas/01-solicitudes.png)
+
+Las imágenes proporcionadas se integran en el encabezado, el formulario y los estados vacíos. [Uso de los recursos visuales](docs/RECURSOS-VISUALES.md).
 
 ### Alcance
 
@@ -150,17 +150,17 @@ Las capturas proceden de la aplicación en ejecución con datos ficticios. Los r
 
 | Integrante | Desarrollo | Pruebas | Documentación | Exposición | Evidencia individual |
 |---|---|---|---|---|---|
-| Angel Fernando Reyes Moreno | Pendiente: describir revisión y cambios propios | Pendiente: ejecutar y explicar personalmente | Pendiente: revisar y completar datos | Pendiente de grabar con cámara encendida | Agregar evidencias reales de las sesiones 1 a 4 |
+| Angel Fernando Reyes Moreno | Selección de imágenes y solicitud de ajustes de marca y textos | Resultados automáticos en evidencias; seguimiento de clase por documentar | Datos de entrega, revisión del contenido y enlace del video | [Video de exposición](https://www.youtube.com/watch?v=TKgLy1HdxAg) | [Registro individual](docs/PARTICIPACION.md) |
 
 No se asignan niveles de participación ni asistencia sin evidencia. Completar la [bitácora individual](docs/PARTICIPACION.md) con fechas reales, avances, revisiones y retroalimentación. Los commits y las pruebas automáticas de esta preparación no sustituyen la asistencia evaluada por el docente.
 
 ## 7. Video de exposición
 
-**Video público de YouTube:** [PEGAR AQUÍ EL ENLACE]
+**Video de exposición en YouTube:** [Ver la exposición de Campus](https://www.youtube.com/watch?v=TKgLy1HdxAg)
 
-**Pendiente obligatorio:** reemplazar el texto entre corchetes por el enlace real cuando el video esté publicado como **Público**. Este marcador no cumple el requisito de entrega. Confirmar que el video se abre sin iniciar sesión.
+El enlace fue proporcionado por el estudiante. La configuración de visibilidad debe permanecer en **Público** para cumplir la consigna.
 
-Angel debe exponer con cámara encendida y demostrar el problema, procedimiento, código, decisiones, funcionamiento y relación con las sesiones 1 a 4. La duración sugerida es 8 a 12 minutos. Consultar el [guion individual](docs/GUION-EXPOSICION.md). La autorización para entregar individualmente también debe confirmarse.
+Material de apoyo: [presentación PowerPoint](output/exposicion/Campus-PA1-Presentacion-final.pptx), [guion corrido en PDF](output/pdf/Campus-Guion-Corrido-10-Minutos.pdf) y [guion editable](docs/GUION-CORRIDO-10-MINUTOS.md). La exposición debe incluir cámara encendida, procedimiento, decisiones, código y demostración.
 
 ## 8. Conclusiones
 
@@ -179,17 +179,18 @@ Angel debe exponer con cámara encendida y demostrar el problema, procedimiento,
 | Formulario reactivo y RouterModule | 2 | Actividad 3 |
 | API REST con HttpClient | 2 | Actividad 4 |
 | GitHub y README | 4 | Este repositorio y documentación |
-| Video público | 3 | Pendiente de grabar/publicar |
+| Video público | 3 | Enlace incorporado en la sección 7; revisar visibilidad y contenido |
 | Asistencia, participación y seguimiento | 3 | Evidencias individuales de clase |
 | **Total** | **20** | La calificación corresponde al docente |
 
 **Inconsistencia detectada:** la sección E del PDF menciona 12 puntos técnicos, pero su tabla H asigna 3 + 3 + 2 + 2 = **10**, y los otros criterios suman 10. Se conserva la tabla oficial que totaliza 20 y se recomienda consultar la discrepancia al docente. No se garantiza una nota.
 
-- [ ] Confirmar permiso para realizar la evaluación individualmente.
+- [x] Modalidad individual autorizada por el docente, según confirmación del estudiante.
 - [ ] Revisar el código y realizar una ejecución personal completa.
 - [ ] Registrar aportes y evidencias reales de seguimiento de sesiones 1 a 4.
-- [ ] Grabar la exposición con cámara encendida y demostrar conocimiento.
-- [ ] Publicar el video en YouTube como Público y colocar aquí su enlace.
+- [x] Incorporar el enlace de la exposición proporcionado por el estudiante.
+- [ ] Confirmar visibilidad Pública, cámara encendida y contenido del video.
+- [x] Colocar el enlace de YouTube dentro del README.
 - [ ] Verificar acceso al repositorio y entregar su enlace en el aula virtual.
 
 Ver el [checklist y los puntos delicados de la consigna](docs/ENTREGA.md).
@@ -205,4 +206,4 @@ Ver el [checklist y los puntos delicados de la consigna](docs/ENTREGA.md).
 - [La sintaxis de control de flujo aparece desde Angular 17](https://angular.dev/reference/migrations/control-flow). Para Angular 16 se utilizan `*ngIf` y `*ngFor`.
 - [Guía de JSONPlaceholder](https://jsonplaceholder.typicode.com/guide/).
 
-**Última actualización:** 21/09/2026, hora de Perú. Las evidencias automáticas registran también fecha UTC.
+**Última actualización:** 22/09/2026, hora de Perú. Las evidencias automáticas registran también fecha UTC.

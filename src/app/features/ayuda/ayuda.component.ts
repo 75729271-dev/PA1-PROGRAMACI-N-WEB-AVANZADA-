@@ -35,13 +35,22 @@ import { Component } from "@angular/core";
         mediante una petición HTTP. Requiere conexión a Internet y permite
         volver a intentar una consulta fallida.
       </p>
-      <h2>Alcance de esta práctica</h2>
+      <h2>Sobre esta entrega</h2>
       <p>
-        Proyecto educativo PA1, Programación Web II. Los seis registros
-        iniciales y sus estados son ejemplos. No hay autenticación, correos,
-        base de datos central ni atención administrativa. Borrar los datos del
-        sitio elimina los registros locales. Otro navegador tiene su propia
-        lista. El directorio externo es independiente de las solicitudes.
+        Profesor, encontrará seis solicitudes de ejemplo para revisar el listado
+        y los distintos estados. Puede registrar una nueva solicitud, consultar
+        su detalle y recargar la página para comprobar que se conserva.
+        Los datos se guardan en el navegador que utilice; si borra los datos
+        del sitio o abre la aplicación en otro navegador, no verá los registros
+        que haya creado aquí.
+      </p>
+      <p>
+        El desarrollo cubre los contenidos de las sesiones 1 a 4. Por eso,
+        todavía no incluye inicio de sesión, envío de correos ni un backend
+        con base de datos compartida. Los estados iniciales sirven para la
+        demostración y no representan una atención administrativa real.
+        En «Directorio» puede comprobar el consumo de la API externa,
+        cuyos datos se muestran por separado de las solicitudes registradas.
       </p>
       <a class="button primary" routerLink="/solicitudes/nueva"
         >Registrar una solicitud →</a

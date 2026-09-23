@@ -1310,3 +1310,153 @@ dd {
 .table-wrap {
   position: relative;
 }
+
+/* Imágenes proporcionadas para el proyecto: composición y recorte sin modificar los originales. */
+.academic-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 248px;
+  margin-bottom: 28px;
+  border-radius: 14px;
+  background: #153b33;
+}
+.academic-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 52%;
+  z-index: -2;
+}
+.academic-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(15, 45, 36, 0.97) 0%,
+    rgba(15, 45, 36, 0.88) 32%,
+    rgba(15, 45, 36, 0.28) 66%,
+    rgba(15, 45, 36, 0.06) 100%
+  );
+  z-index: -1;
+}
+.academic-hero-content {
+  padding: 34px 36px;
+  max-width: 510px;
+}
+.academic-hero .eyebrow {
+  color: #d1e3c2;
+  font-size: 10px;
+}
+.academic-hero h1 {
+  color: #fff;
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+.academic-hero .lead {
+  color: #e3ece5;
+  line-height: 1.65;
+}
+.hero-action {
+  background: #e3efc7;
+  color: #193e2f;
+  margin-top: 23px;
+}
+.hero-action:hover {
+  background: #f0f7e2;
+}
+.illustrated-help {
+  overflow: hidden;
+  padding-top: 16px;
+}
+.form-illustration {
+  height: 206px;
+  margin: 0 -12px 18px;
+  overflow: hidden;
+}
+.form-illustration img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 56%;
+}
+.illustrated-help h2 {
+  margin-top: 12px;
+  font-size: 21px;
+}
+.empty-state-image {
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 0 auto 22px;
+}
+@media (max-width: 1200px) {
+  .form-illustration {
+    height: 174px;
+  }
+}
+@media (max-width: 650px) {
+  .academic-hero {
+    min-height: 252px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+  }
+  .academic-hero-content {
+    padding: 28px 24px;
+  }
+  .academic-hero h1 {
+    font-size: 32px;
+  }
+  .academic-hero .lead {
+    max-width: 235px;
+    font-size: 13px;
+  }
+  .academic-hero-image {
+    object-position: 64% center;
+  }
+  .academic-hero::before {
+    background: linear-gradient(
+      90deg,
+      rgba(15, 45, 36, 0.94),
+      rgba(15, 45, 36, 0.7) 65%,
+      rgba(15, 45, 36, 0.38)
+    );
+  }
+  .hero-action {
+    margin-top: 20px;
+  }
+  .form-aside {
+    display: block;
+    grid-row: 1;
+  }
+  .illustrated-help {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 16px;
+    align-items: center;
+    padding: 12px 16px;
+  }
+  .illustrated-help .form-illustration {
+    height: 92px;
+    margin: 0;
+  }
+  .illustrated-help h2 {
+    font-size: 17px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .illustrated-help > .eyebrow,
+  .illustrated-help ol,
+  .form-aside .aside-note {
+    display: none;
+  }
+  .empty-state-image {
+    width: 128px;
+    height: 128px;
+  }
+}

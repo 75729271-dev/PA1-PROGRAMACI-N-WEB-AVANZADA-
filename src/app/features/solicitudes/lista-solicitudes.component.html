@@ -1,13 +1,21 @@
 <section *ngIf="vista$ | async as vista">
-  <div class="page-heading">
-    <div>
+  <div class="academic-hero">
+    <img
+      class="academic-hero-image"
+      src="assets/images/banner-academico.jpg"
+      alt=""
+      width="2000"
+      height="720"
+      fetchpriority="high"
+    />
+    <div class="academic-hero-content">
       <p class="eyebrow">GESTIÓN ACADÉMICA</p>
       <h1>Solicitudes</h1>
       <p class="lead">Tus trámites, organizados de principio a fin.</p>
+      <a class="button hero-action" routerLink="/solicitudes/nueva"
+        ><span aria-hidden="true">＋</span> Nueva solicitud</a
+      >
     </div>
-    <a class="button primary" routerLink="/solicitudes/nueva"
-      ><span aria-hidden="true">＋</span> Nueva solicitud</a
-    >
   </div>
   <div class="notice warning" *ngIf="servicio.aviso" role="alert">
     {{ servicio.aviso }}
@@ -118,7 +126,15 @@
       </div>
       <ng-template #vacio
         ><div class="empty-state">
-          <span class="empty-icon" aria-hidden="true">▤</span>
+          <img
+            class="empty-state-image"
+            src="assets/images/sin-solicitudes.png"
+            alt=""
+            width="1024"
+            height="1024"
+            loading="lazy"
+            decoding="async"
+          />
           <h3>
             {{
               vista.solicitudes.length

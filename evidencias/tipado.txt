@@ -1,3 +1,3 @@
-
-> campus-solicitudes-pa1@1.0.0 typecheck
-> tsc --noEmit -p tsconfig.app.json
+Comando: node node_modules/typescript/bin/tsc --noEmit -p tsconfig.app.json
+Resultado de la ejecución final: código de salida 0, sin errores de tipado.
+Fecha UTC: 2026-09-23T03:00:35.417023+00:00
