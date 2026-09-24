@@ -1,6 +1,6 @@
 # Recursos visuales
 
-Las tres imágenes fueron proporcionadas por el estudiante en la carpeta `imgs/`. Se integran como recursos decorativos en `src/assets/images/`, conservando los archivos originales sin modificarlos.
+Las tres imágenes fueron proporcionadas por el estudiante y se integran como recursos decorativos en `src/assets/images/`.
 
 | Recurso | Uso |
 |---|---|

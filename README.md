@@ -12,18 +12,20 @@ Profesor, presento **Campus**, una aplicación para registrar y consultar solici
 
 **Video de exposición:** [Ver mi exposición en YouTube](https://www.youtube.com/watch?v=TKgLy1HdxAg)
 
-## 1. Integrante y participación
+## 1. Integrante y reparto de responsabilidades
 
-Presento este trabajo de manera individual por motivos personales. Mi nombre es **Angel Fernando Reyes Moreno** y asumo la presentación y sustentación del proyecto.
+Presento este trabajo de manera individual por motivos personales. Mi nombre es **Angel Fernando Reyes Moreno** y asumo el desarrollo, la documentación y la sustentación del proyecto. El reparto sigue el orden de las diapositivas de la presentación:
 
-| Aspecto | Participación y referencia |
+| Diapositivas | Responsabilidad |
 |---|---|
-| Presentación del caso | Presento la solución de solicitudes académicas y su relación con los contenidos de la PA1. |
-| Revisión visual | Seleccioné las imágenes y solicité ajustes en la marca Campus y en los textos de la interfaz. |
-| Documentación y entrega | Proporcioné los datos de la entrega y revisé la forma de presentar el proyecto al docente. |
-| Exposición | Adjunto el [video de sustentación](https://www.youtube.com/watch?v=TKgLy1HdxAg) y los materiales de apoyo. |
+| 1 y 2 | Análisis del caso, objetivo y procedimiento de la solución. |
+| 3 | Actividad 1: modelos tipados, utilidades ES6+ y configuración TypeScript. |
+| 4 | Actividad 2: componentes, módulos y servicio con inyección de dependencias. |
+| 5 y 6 | Actividad 3: formulario reactivo, validaciones, rutas y persistencia local. |
+| 7 y 8 | Actividad 4: consumo de la API REST, manejo de errores y decisiones técnicas. |
+| 9 y 10 | Pruebas, evidencias, conclusiones y [video de sustentación](https://www.youtube.com/watch?v=TKgLy1HdxAg). |
 
-El [registro de participación](docs/PARTICIPACION.md) distingue los aportes de preparación del seguimiento de las sesiones 1 a 4. Las evidencias individuales de clase no están adjuntas a este repositorio; las capturas y pruebas que presento aquí corresponden al funcionamiento de la aplicación.
+El detalle por diapositiva, con los archivos de cada responsabilidad y los acuerdos de trabajo, está en el [reparto de responsabilidades](docs/PARTICIPACION.md).
 
 ## 2. Descripción y objetivo
 
@@ -162,13 +164,13 @@ La ejecución documentada registra **18 pruebas de navegador aprobadas**, compro
 
 La [carpeta de evidencias](evidencias/README.md) describe cada escenario. Las respuestas simuladas se identifican expresamente y se distinguen de la consulta real a JSONPlaceholder.
 
-## 6. Exposición y materiales de apoyo
+## 6. Exposición
 
 Adjunto mi exposición para acompañar la revisión del proyecto:
 
 **YouTube:** [https://www.youtube.com/watch?v=TKgLy1HdxAg](https://www.youtube.com/watch?v=TKgLy1HdxAg)
 
-También puede consultar la [presentación PowerPoint](output/exposicion/Campus-PA1-Presentacion-final.pptx), el [guion de exposición en PDF](output/pdf/Campus-Guion-Corrido-10-Minutos.pdf) y el [guion en texto](docs/GUION-CORRIDO-10-MINUTOS.md).
+También puede consultar la [presentación PowerPoint](output/exposicion/Campus-PA1-Presentacion-final.pptx) utilizada en el video.
 
 ## 7. Conclusiones
 
