@@ -1,6 +1,6 @@
 # Recursos visuales
 
-Las tres imágenes fueron proporcionadas por el estudiante y se integran como recursos decorativos en `src/assets/images/`.
+Incorporo tres imágenes como apoyo visual en `src/assets/images/`. En esta tabla indico dónde se utiliza cada una:
 
 | Recurso | Uso |
 |---|---|

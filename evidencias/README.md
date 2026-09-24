@@ -105,4 +105,4 @@ npx playwright install chromium
 npm test
 ```
 
-La última instrucción regenera el informe JSON y las capturas. Para conservar salidas de consola de otra ejecución, redirigirlas a archivos nuevos o actualizar los actuales junto con las capturas y su fecha. No editar los resultados para aparentar aprobaciones.
+La última instrucción regenera el informe JSON y las capturas. Los resultados adjuntos corresponden a las ejecuciones cuyas fechas constan en cada archivo. Una nueva ejecución puede producir fechas y tiempos diferentes; la consulta real también depende de la disponibilidad de JSONPlaceholder.

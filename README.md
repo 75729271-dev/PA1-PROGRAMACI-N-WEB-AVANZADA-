@@ -25,7 +25,7 @@ Presento este trabajo de manera individual por motivos personales. Mi nombre es 
 | 7 y 8 | Actividad 4: consumo de la API REST, manejo de errores y decisiones técnicas. |
 | 9 y 10 | Pruebas, evidencias, conclusiones y [video de sustentación](https://www.youtube.com/watch?v=TKgLy1HdxAg). |
 
-El detalle por diapositiva, con los archivos de cada responsabilidad y los acuerdos de trabajo, está en el [reparto de responsabilidades](docs/PARTICIPACION.md).
+El detalle por diapositiva, con los archivos de cada responsabilidad y los criterios de organización, está en el [reparto de responsabilidades](docs/PARTICIPACION.md).
 
 ## 2. Descripción y objetivo
 
@@ -170,7 +170,9 @@ Adjunto mi exposición para acompañar la revisión del proyecto:
 
 **YouTube:** [https://www.youtube.com/watch?v=TKgLy1HdxAg](https://www.youtube.com/watch?v=TKgLy1HdxAg)
 
-También puede consultar la [presentación PowerPoint](output/exposicion/Campus-PA1-Presentacion-final.pptx) utilizada en el video.
+También adjunto la [presentación PowerPoint](output/exposicion/Campus-PA1-Presentacion-final.pptx). Sus notas amplían la explicación de cada actividad y señalan los archivos que puede revisar.
+
+Para descargar el código, la documentación, las evidencias y la presentación en un solo archivo, puede utilizar el [ZIP de entrega](entrega/Campus-PA1-Entrega-Final.zip).
 
 ## 7. Conclusiones
 
@@ -192,4 +194,4 @@ La principal limitación del caso es la persistencia por navegador. Una evoluci�
 - [Compatibilidad de versiones de Angular](https://angular.dev/reference/versions).
 - [Documentación de JSONPlaceholder](https://jsonplaceholder.typicode.com/guide/).
 
-**Última actualización del README:** 23/09/2026, hora de Perú.
+**Última actualización del README:** 24/09/2026, hora de Perú.

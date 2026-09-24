@@ -94,7 +94,7 @@ El servicio escribe antes de actualizar su estado observable. Así, si el navega
 
 Se usa `crypto.randomUUID()` para IDs y `Date.toISOString()` para guardar fechas. Las vistas muestran hora de Perú (UTC−5). Los ejemplos iniciales tienen fechas fijas para que la demostración sea repetible.
 
-No existe sincronización multiusuario ni resolución de ediciones simultáneas entre pestañas. Una sesión abierta podría conservar su copia en memoria si otra pestaña cambia el almacenamiento; para esta práctica utilizar una pestaña de edición. El registro es local al origen: `localhost` y `127.0.0.1` mantienen almacenamientos distintos. No almacenar datos sensibles.
+No existe sincronización multiusuario ni resolución de ediciones simultáneas entre pestañas. Una sesión abierta podría conservar su copia en memoria si otra pestaña cambia el almacenamiento; por ello, la revisión del registro se plantea desde una sola pestaña. El registro es local al origen: `localhost` y `127.0.0.1` mantienen almacenamientos distintos. Los datos de demostración son ficticios y el sistema no incluye protección para almacenar información sensible.
 
 ## Sesión 2: TSConfig, Webpack y depuración
 
@@ -102,7 +102,7 @@ No existe sincronización multiusuario ni resolución de ediciones simultáneas 
 
 Se utiliza el builder Webpack de Angular CLI 16, `@angular-devkit/build-angular:browser`. El CLI ya integra la compilación Angular, TypeScript y CSS. La explicación de `ts-loader` del material ilustra un proyecto TypeScript genérico; no hace falta duplicar ese pipeline dentro del proyecto Angular.
 
-Para demostrar depuración: ejecutar `npm start`, abrir DevTools → Sources, localizar `nueva-solicitud.component.ts`, poner un breakpoint en `guardar()` y enviar el formulario. Inspeccionar `formulario.valid` y `getRawValue()`. Retirar el breakpoint antes de continuar la demo.
+Para revisar la depuración, puede iniciar la aplicación con `npm start` y abrir DevTools → Sources. En `nueva-solicitud.component.ts`, un breakpoint en `guardar()` permite observar `formulario.valid` y `getRawValue()` al enviar el formulario. Así puede comprobar el estado de los controles antes del registro.
 
 ## Integración conceptual futura con Node.js
 

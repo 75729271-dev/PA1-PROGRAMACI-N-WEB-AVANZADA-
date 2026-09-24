@@ -20,11 +20,10 @@ Al presentar la PA1 de manera individual, asumo todas las responsabilidades del 
 | 9 | Verificación | Ejecutar tipado, compilación y las 18 pruebas de navegador, y registrar sus resultados | `tests/solicitudes.spec.ts`, `evidencias/` |
 | 10 | Conclusiones | Exponer los resultados, las limitaciones y la siguiente etapa del proyecto | README, sección 7 y [video](https://www.youtube.com/watch?v=TKgLy1HdxAg) |
 
-## Acuerdos de trabajo
+## Criterios de organización
 
-- Desarrollar la solución en el orden de las cuatro actividades de la consigna, partiendo del modelo de datos.
-- Validar cada actividad con pruebas y capturas antes de pasar a la siguiente.
-- Mantener en el repositorio solo el código, la documentación, las evidencias y la presentación final.
-- Explicar en el video el procedimiento seguido y las decisiones técnicas, con la cámara encendida.
+Organizo la entrega alrededor de las cuatro actividades de la consigna: modelo de datos, componentes y servicios, formulario y rutas, y consulta de la API. Para facilitar su revisión, relaciono cada actividad con el código y las evidencias correspondientes en la tabla anterior.
+
+Adjunto los resultados de tipado, compilación y pruebas de navegador en la carpeta `evidencias/`. La presentación y el enlace del video se encuentran en el README; las notas de las diapositivas explican las decisiones técnicas y remiten a su implementación.
 
 La asistencia y participación en las sesiones 1 a 4 se verifican directamente con el docente.
